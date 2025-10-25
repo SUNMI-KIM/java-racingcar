@@ -10,6 +10,7 @@ public class OutputView {
         for (Car car : cars) {
             System.out.println(car);
         }
+        System.out.println();
     }
 
     public static void printWinners(Winners winners) {
