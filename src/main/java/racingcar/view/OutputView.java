@@ -2,6 +2,7 @@ package racingcar.view;
 
 import racingcar.model.car.Car;
 import racingcar.model.car.Cars;
+import racingcar.model.car.Winners;
 
 public class OutputView {
 
@@ -9,5 +10,9 @@ public class OutputView {
         for (Car car : cars) {
             System.out.println(car);
         }
+    }
+
+    public static void printWinners(Winners winners) {
+        System.out.println(winners);
     }
 }
