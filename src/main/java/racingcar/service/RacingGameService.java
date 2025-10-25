@@ -1,4 +1,4 @@
-package racingcar.Service;
+package racingcar.service;
 
 import racingcar.model.car.Car;
 import racingcar.model.car.Cars;
