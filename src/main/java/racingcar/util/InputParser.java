@@ -11,4 +11,9 @@ public class InputParser {
         return Arrays.stream(input.split(","))
                 .collect(Collectors.toList());
     }
+
+    public static int parseTryCount(String tryCount) {
+
+        return Integer.parseInt(tryCount);
+    }
 }
