@@ -6,6 +6,10 @@ import racingcar.model.car.Winners;
 
 public class OutputView {
 
+    public static void printGameResultHeader() {
+        System.out.println("\n실행 결과");
+    }
+
     public static void printRoundResult(Cars cars) {
         for (Car car : cars) {
             System.out.println(car);
