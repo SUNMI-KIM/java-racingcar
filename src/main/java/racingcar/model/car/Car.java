@@ -13,6 +13,18 @@ public class Car {
         distance++;
     }
 
+    int getDistance() {
+        return distance;
+    }
+
+    boolean isWinner(int maxDistance) {
+        return distance == maxDistance;
+    }
+
+    String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return name + " : " + "-".repeat(distance);
