@@ -6,7 +6,7 @@ import racingcar.model.car.Winners;
 
 public class OutputView {
 
-    public static void printGameResultHeader() {
+    public static void printStartMessage() {
         System.out.println("\n실행 결과");
     }
 
