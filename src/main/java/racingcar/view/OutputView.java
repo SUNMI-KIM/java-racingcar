@@ -10,7 +10,8 @@ public class OutputView {
     private static final String WINNER_MESSAGE = "최종 우승자 : ";
 
     public static void printStartMessage() {
-        System.out.println("\n" + GAME_START_MESSAGE);
+        System.out.println();
+        System.out.println(GAME_START_MESSAGE);
     }
 
     public static void printRoundResult(Cars cars) {
