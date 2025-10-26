@@ -9,6 +9,8 @@ public class InputParser {
     public static List<String> parseInput(String input) {
 
         return Arrays.stream(input.split(","))
+                .map(String::trim)
+                .filter(name -> !name.isEmpty())
                 .collect(Collectors.toList());
     }
 

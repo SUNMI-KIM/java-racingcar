@@ -25,7 +25,9 @@ public class InputParserTest {
                 Arguments.of("pobi,crong,honux", List.of("pobi", "crong", "honux")),
                 Arguments.of("a,b,c", List.of("a", "b", "c")),
                 Arguments.of("one,two", List.of("one", "two")),
-                Arguments.of("single", List.of("single"))
+                Arguments.of("single", List.of("single")),
+                Arguments.of(" sin gle ", List.of("sin gle")),
+                Arguments.of("sun, sun,      ", List.of("sun", "sun"))
         );
     }
 }
