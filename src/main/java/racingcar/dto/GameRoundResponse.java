@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GameRoundResponse {
-    private List<List<String>> gameRounds;
+    private final List<List<String>> gameRounds;
 
     public GameRoundResponse() {
         gameRounds = new ArrayList<>();
