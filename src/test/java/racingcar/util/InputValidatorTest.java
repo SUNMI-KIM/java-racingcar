@@ -1,5 +1,6 @@
 package racingcar.util;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -20,8 +21,14 @@ public class InputValidatorTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"이름!,", "!!@@이름", "이름~~?", "", ";;", " ", "\n", "한글 영어", "5글자이상글자"})
+    @ValueSource(strings = {"이름!,", "!!@@이름", "이름~~?", "", ";;", "\n"})
     void 자동차_이름_형식이_틀리면_예외를_던진다(String input) {
-        assertThrows(IllegalArgumentException.class, () -> InputValidator.validateCarName(input));
+        assertThrows(IllegalArgumentException.class, () -> InputValidator.validateDelimiter(input));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"공 백", " 공백 "})
+    void 자동차_이름에_공백이_있어도_예외를_던지지_않는다(String input) {
+        assertDoesNotThrow(() -> InputValidator.validateDelimiter(input));
     }
 }

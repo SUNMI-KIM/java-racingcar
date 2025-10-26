@@ -19,7 +19,7 @@ public class RacingGameController {
 
     public void run() {
         String carNames = InputView.inputCarNames();
-        InputValidator.validateCarName(carNames);
+        InputValidator.validateDelimiter(carNames);
 
         String tryCount = InputView.inputTryCount();
         InputValidator.validateTryCount(tryCount);

@@ -6,7 +6,7 @@ public class InputValidator {
     private static final String TRY_COUNT_REGEX = "[1-9][0-9]*";
 
     private static final String INVALID_CAR_NAME_MESSAGE = "차 이름은 1~5자의 한글 또는 영어로만 입력해야 합니다.";
-    private static final String CAR_NAME_REGEX = "^([가-힣a-zA-Z]{1,5})(,([가-힣a-zA-Z]{1,5}))*";
+    private static final String DELIMITER_REGEX = "([a-zA-Z가-힣0-9 ]+,)*[a-zA-Z가-힣0-9 ]+";
 
     public static void validateTryCount(String input) {
         if (!input.matches(TRY_COUNT_REGEX)) {
@@ -19,8 +19,8 @@ public class InputValidator {
         }
     }
 
-    public static void validateCarName(String input) {
-        if (!input.matches(CAR_NAME_REGEX)) {
+    public static void validateDelimiter(String input) {
+        if (!input.matches(DELIMITER_REGEX)) {
             throw new IllegalArgumentException(INVALID_CAR_NAME_MESSAGE);
         }
     }
