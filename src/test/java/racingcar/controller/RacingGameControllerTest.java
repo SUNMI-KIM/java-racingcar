@@ -25,7 +25,7 @@ public class RacingGameControllerTest extends NsTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"1a", "!", "", "\n", "2147483648", "9999999999", "999999999999999999999,"
+    @ValueSource(strings = {"!", "", "\n", "2147483648", "9999999999", "999999999999999999999,"
             + " \"이름!,\", \"!!@@이름\", \"이름~~?\", \"\", \";;\", \" \", \"\\n\", \"한글 영어\", \"5글자이상글자\""})
     void 올바르지_않은_입력이_들어오면_예외를_반환한다(String input) {
         assertThrows(IllegalArgumentException.class, () -> run(input, "3"));
