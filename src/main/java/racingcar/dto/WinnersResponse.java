@@ -12,6 +12,6 @@ public class WinnersResponse {
 
     @Override
     public String toString() {
-        return String.join(", ", winners);
+        return "최종 우승자 : " + String.join(", ", winners);
     }
 }
