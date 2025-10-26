@@ -1,5 +1,9 @@
 package racingcar.util;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class InputValidator {
 
     private static final String INVALID_TRY_COUNT_MESSAGE = "시도 횟수 입력이 형식에 맞지 않습니다.";
@@ -21,6 +25,21 @@ public class InputValidator {
 
     public static void validateDelimiter(String input) {
         if (!input.matches(DELIMITER_REGEX)) {
+            throw new IllegalArgumentException(INVALID_CAR_NAME_MESSAGE);
+        }
+    }
+
+    public static void validateCarNames(List<String> cars) {
+        if (cars.isEmpty()) {
+            throw new IllegalArgumentException(INVALID_CAR_NAME_MESSAGE);
+        }
+
+        Set<String> uniqueNames = new HashSet<>(cars);
+        if (uniqueNames.size() != cars.size()) {
+            throw new IllegalArgumentException(INVALID_CAR_NAME_MESSAGE);
+        }
+
+        if (cars.stream().anyMatch(name -> name.length() > 5)) {
             throw new IllegalArgumentException(INVALID_CAR_NAME_MESSAGE);
         }
     }

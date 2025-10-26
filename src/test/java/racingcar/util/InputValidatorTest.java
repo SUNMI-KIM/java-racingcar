@@ -3,7 +3,10 @@ package racingcar.util;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
+import java.util.stream.Stream;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class InputValidatorTest {
@@ -30,5 +33,19 @@ public class InputValidatorTest {
     @ValueSource(strings = {"공 백", " 공백 "})
     void 자동차_이름에_공백이_있어도_예외를_던지지_않는다(String input) {
         assertDoesNotThrow(() -> InputValidator.validateDelimiter(input));
+    }
+
+    @ParameterizedTest
+    @MethodSource("inputProvider")
+    void 자동차_이름이_5글자_이상이거나_중복이거나_비어있으면_예외를_던진다(List<String> cars) {
+        assertThrows(IllegalArgumentException.class, () -> InputValidator.validateCarNames(cars));
+    }
+
+    private static Stream<List<String>> inputProvider() {
+        return Stream.of(
+                List.of("다섯글자이상"),
+                List.of("선미", "선미"),
+                List.of()
+        );
     }
 }
