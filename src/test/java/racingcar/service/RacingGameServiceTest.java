@@ -21,10 +21,10 @@ public class RacingGameServiceTest {
 
             // when
             racingGameService.playRound(cars);
-            WinnersResponse winnersResponse = cars.findWinners();
+            WinnersResponse winnersResponse = new WinnersResponse(cars.findWinners());
 
             // then
-            assertThat(winnersResponse.toString()).isEqualTo("pobi, woni, jun");
+            assertThat(winnersResponse.toString()).isEqualTo("최종 우승자 : pobi, woni, jun");
         }, 6, 5, 4);
     }
 }

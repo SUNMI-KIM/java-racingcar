@@ -19,6 +19,6 @@ public class WinnersResponseTest {
         String result = winnersResponse.toString();
 
         // then
-        assertThat(result).isEqualTo("wooteco, woo, te, co");
+        assertThat(result).isEqualTo("최종 우승자 : wooteco, woo, te, co");
     }
 }

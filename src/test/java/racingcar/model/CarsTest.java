@@ -36,10 +36,10 @@ public class CarsTest {
 
             // when
             racingGameService.playRound(cars);
-            WinnersResponse winnersResponse = cars.findWinners();
+            WinnersResponse winnersResponse = new WinnersResponse(cars.findWinners());
 
             // then
-            assertThat(winnersResponse.toString()).isEqualTo("pobi");
+            assertThat(winnersResponse.toString()).isEqualTo("최종 우승자 : pobi");
         }, 6, 1, 2);
     }
 }

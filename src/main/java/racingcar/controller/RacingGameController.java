@@ -1,6 +1,7 @@
 package racingcar.controller;
 
 import java.util.List;
+import racingcar.dto.GameResponse;
 import racingcar.model.car.Cars;
 import racingcar.dto.WinnersResponse;
 import racingcar.service.RacingGameService;
@@ -32,13 +33,8 @@ public class RacingGameController {
         int tryCountValue = InputParser.parseTryCount(tryCount);
 
         OutputView.printStartMessage();
-        for (int i = 0; i < tryCountValue; i++) {
-            racingGameService.playRound(cars);
-            OutputView.printRoundResult(cars);
-        }
-
-        WinnersResponse winnersResponse = cars.findWinners();
-        OutputView.printWinners(winnersResponse);
+        GameResponse gameResponse = racingGameService.playGames(cars, tryCountValue);
+        OutputView.printGames(gameResponse);
     }
 
 }

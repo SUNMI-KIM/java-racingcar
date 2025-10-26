@@ -1,5 +1,6 @@
 package racingcar.view;
 
+import racingcar.dto.GameResponse;
 import racingcar.model.car.Car;
 import racingcar.model.car.Cars;
 import racingcar.dto.WinnersResponse;
@@ -14,14 +15,7 @@ public class OutputView {
         System.out.println(GAME_START_MESSAGE);
     }
 
-    public static void printRoundResult(Cars cars) {
-        for (Car car : cars) {
-            System.out.println(car);
-        }
-        System.out.println();
-    }
-
-    public static void printWinners(WinnersResponse winnersResponse) {
-        System.out.println(WINNER_MESSAGE + winnersResponse);
+    public static void printGames(GameResponse gameResponse) {
+        System.out.println(gameResponse);
     }
 }

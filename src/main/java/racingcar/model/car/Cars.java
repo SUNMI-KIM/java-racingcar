@@ -21,14 +21,13 @@ public class Cars implements Iterable<Car> {
                 .getAsInt();
     }
 
-    public WinnersResponse findWinners() {
+    public List<String> findWinners() {
         int maxDistance = findMaxDistance();
 
-        List<String> winners = cars.stream()
+        return cars.stream()
                 .filter(car -> car.isWinner(maxDistance))
                 .map(Car::getName)
                 .collect(Collectors.toList());
-        return new WinnersResponse(winners);
     }
 
     @Override
