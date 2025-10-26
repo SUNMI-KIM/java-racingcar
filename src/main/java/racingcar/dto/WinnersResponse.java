@@ -1,12 +1,12 @@
-package racingcar.model.car;
+package racingcar.dto;
 
 import java.util.List;
 
-public class Winners {
+public class WinnersResponse {
 
     private final List<String> winners;
 
-    public Winners(List<String> winners) {
+    public WinnersResponse(List<String> winners) {
         this.winners = winners;
     }
 

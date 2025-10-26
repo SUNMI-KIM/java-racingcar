@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import racingcar.model.car.Cars;
-import racingcar.model.car.Winners;
+import racingcar.dto.WinnersResponse;
 
 public class RacingGameServiceTest {
 
@@ -21,10 +21,10 @@ public class RacingGameServiceTest {
 
             // when
             racingGameService.playRound(cars);
-            Winners winners = cars.findWinners();
+            WinnersResponse winnersResponse = cars.findWinners();
 
             // then
-            assertThat(winners.toString()).isEqualTo("pobi, woni, jun");
+            assertThat(winnersResponse.toString()).isEqualTo("pobi, woni, jun");
         }, 6, 5, 4);
     }
 }

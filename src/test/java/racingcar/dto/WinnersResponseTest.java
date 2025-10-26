@@ -1,22 +1,22 @@
-package racingcar.model;
+package racingcar.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
-import racingcar.model.car.Winners;
+import racingcar.dto.WinnersResponse;
 
-public class WinnersTest {
+public class WinnersResponseTest {
 
     @Test
     void Winners_toString_호출시_이름이_쉼표로_구분되어_반환된다() {
 
         // given
         List<String> winnersNames = List.of("wooteco", "woo", "te", "co");
-        Winners winners = new Winners(winnersNames);
+        WinnersResponse winnersResponse = new WinnersResponse(winnersNames);
 
         // when
-        String result = winners.toString();
+        String result = winnersResponse.toString();
 
         // then
         assertThat(result).isEqualTo("wooteco, woo, te, co");

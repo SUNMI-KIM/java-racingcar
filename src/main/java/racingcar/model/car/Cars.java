@@ -3,6 +3,7 @@ package racingcar.model.car;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
+import racingcar.dto.WinnersResponse;
 
 public class Cars implements Iterable<Car> {
     private final List<Car> cars;
@@ -20,14 +21,14 @@ public class Cars implements Iterable<Car> {
                 .getAsInt();
     }
 
-    public Winners findWinners() {
+    public WinnersResponse findWinners() {
         int maxDistance = findMaxDistance();
 
         List<String> winners = cars.stream()
                 .filter(car -> car.isWinner(maxDistance))
                 .map(Car::getName)
                 .collect(Collectors.toList());
-        return new Winners(winners);
+        return new WinnersResponse(winners);
     }
 
     @Override

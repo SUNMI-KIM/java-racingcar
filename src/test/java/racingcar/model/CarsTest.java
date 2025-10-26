@@ -7,7 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import racingcar.model.car.Car;
 import racingcar.model.car.Cars;
-import racingcar.model.car.Winners;
+import racingcar.dto.WinnersResponse;
 import racingcar.service.RacingGameService;
 
 public class CarsTest {
@@ -36,10 +36,10 @@ public class CarsTest {
 
             // when
             racingGameService.playRound(cars);
-            Winners winners = cars.findWinners();
+            WinnersResponse winnersResponse = cars.findWinners();
 
             // then
-            assertThat(winners.toString()).isEqualTo("pobi");
+            assertThat(winnersResponse.toString()).isEqualTo("pobi");
         }, 6, 1, 2);
     }
 }

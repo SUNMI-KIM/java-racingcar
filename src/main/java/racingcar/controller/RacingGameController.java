@@ -2,7 +2,7 @@ package racingcar.controller;
 
 import java.util.List;
 import racingcar.model.car.Cars;
-import racingcar.model.car.Winners;
+import racingcar.dto.WinnersResponse;
 import racingcar.service.RacingGameService;
 import racingcar.util.InputParser;
 import racingcar.util.InputValidator;
@@ -37,8 +37,8 @@ public class RacingGameController {
             OutputView.printRoundResult(cars);
         }
 
-        Winners winners = cars.findWinners();
-        OutputView.printWinners(winners);
+        WinnersResponse winnersResponse = cars.findWinners();
+        OutputView.printWinners(winnersResponse);
     }
 
 }

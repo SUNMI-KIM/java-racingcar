@@ -2,7 +2,7 @@ package racingcar.view;
 
 import racingcar.model.car.Car;
 import racingcar.model.car.Cars;
-import racingcar.model.car.Winners;
+import racingcar.dto.WinnersResponse;
 
 public class OutputView {
 
@@ -21,7 +21,7 @@ public class OutputView {
         System.out.println();
     }
 
-    public static void printWinners(Winners winners) {
-        System.out.println(WINNER_MESSAGE + winners);
+    public static void printWinners(WinnersResponse winnersResponse) {
+        System.out.println(WINNER_MESSAGE + winnersResponse);
     }
 }
